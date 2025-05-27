@@ -5,7 +5,7 @@ import { createInterface } from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
 export const readline = createInterface({ input, output });
-const TIMEOUT_DURATION = 10_000;
+const TIMEOUT_DURATION = 60_000;
 
 async function askWithTimeout(question: string): Promise<string | number | null> {
   return Promise.race([
