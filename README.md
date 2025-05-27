@@ -25,13 +25,18 @@ This repository is a simulation of coffee machine management in TypeScript.
 
 2. Run the program with ts-node or compile with tsc and run with Node.js:
     ```sh
-    npx ts-node Main.ts
+    npm run start
     ```
-    or
+    or if you want to run  to debug mode
     ```sh
-    tsc && node Main.js
+    npm run dev
     ```
-    
+    for compile only
+    ```sh
+    npm run build
+    ```
+
+
 ## Example Usage
 ```
 -------------------------
