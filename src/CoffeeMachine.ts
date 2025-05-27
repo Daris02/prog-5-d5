@@ -1,4 +1,4 @@
-import Coffee from "./Coffee";
+import Coffee from './Coffee';
 
 export class CoffeeMachine {
   private coffees: Coffee[];
@@ -21,7 +21,7 @@ export class CoffeeMachine {
 
   commandCoffee(coffee: Coffee, payed: boolean) {
     if (!payed) 
-      throw new Error(`You need payed before command a coffee`);
+      throw new Error('You need payed before command a coffee');
     if (!this.showAvailableCoffee().includes(coffee))
       throw new Error (`Coffee ${coffee.getName()} not available`);
     else coffee.brew();

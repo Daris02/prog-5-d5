@@ -1,6 +1,6 @@
-import { log } from "node:console";
-import Coffee from "./Coffee";
-import { CoffeeMachine } from "./CoffeeMachine";
+import { log } from 'node:console';
+import Coffee from './Coffee';
+import { CoffeeMachine } from './CoffeeMachine';
 import { createInterface } from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
@@ -29,9 +29,9 @@ const creamy = new Coffee('Creamy', 800);
 async function main() {
   const coffeeMachine = new CoffeeMachine([mokka, latte, nature, creamy]);
 
-  log(`-------------------------`);
-  log(`Welcome to Coffee Machine`);
-  log(`All Available coffee: `);
+  log('-------------------------');
+  log('Welcome to Coffee Machine');
+  log('All Available coffee: ');
   coffeeMachine.showAvailableCoffee().map((coffee, index) => {
     log(`${index}: ${coffee.getName()} - ${coffee.getPrice()} Ar`);
   });
