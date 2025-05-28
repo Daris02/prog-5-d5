@@ -17,6 +17,13 @@ async function main() {
   
     coffeeMachine.refill(latte, 10);
 
+    coffeeMachine.addCoffee(new Coffee('cappuccino', 700));
+    coffeeMachine.removeCoffee('nature');
+    
+    coffeeMachine.showAvailableCoffee();
+    coffeeMachine.commandCoffee(nature, 200);
+    
+    coffeeMachine.showAvailableCoffee();
   } catch (err) {
     if (err instanceof CoffeeMachineException) {
       error(`Error: ${err.message}`);

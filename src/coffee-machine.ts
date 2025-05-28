@@ -60,6 +60,8 @@ class CoffeeMachine {
     const payed = priceAmount >= coffee.getPrice();
     if (!payed) 
       throw new CoffeeMachineException('You need payed before command a coffee');
+    if (!this.coffees.includes(coffee))
+      throw new CoffeeMachineException(`Coffee ${coffee.getName()} is not available in the machine`);
     if (!coffee.isAvailable())
       throw new CoffeeMachineException(`Coffee ${coffee.getName()} is not available`);
     if (this.waterLevel < 10)
@@ -69,7 +71,7 @@ class CoffeeMachine {
     if (this.sugarLevel < 10 && coffee.getName().toLowerCase() === 'creamy')
       throw new CoffeeMachineException('Not enough sugar to brew creamy coffee');
     else {
-      coffee.brew();
+      this.brew(coffee);
       this.waterLevel -= 10;
       if (coffee.getName().toLowerCase() === 'latte') {
         this.milkLevel -= 10;
@@ -82,7 +84,7 @@ class CoffeeMachine {
     }
   }
 
-  public brew(coffee: Coffee): void {
+  private brew(coffee: Coffee): void {
     log(`Brewing ${coffee.getName()}...`);
     coffee.brew();
     log(
