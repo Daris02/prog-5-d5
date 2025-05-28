@@ -15,6 +15,22 @@ export default [
     rules: {
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: ['class', 'typeAlias', 'interface', 'enum'],
+          format: ['PascalCase'],
+        },
+        {
+          selector: ['function', 'method'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'variable',
+          format: ['camelCase', 'UPPER_CASE'],
+          leadingUnderscore: 'allow',
+        },
+      ],
     },
   },
 ];
